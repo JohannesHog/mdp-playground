@@ -279,7 +279,7 @@ class ImageMultiDiscrete(Box):
 
     def sample(self):
         sss = np.array(self.state_space_sizes)
-        sampled = (self.np_random.random_sample(sss.shape) * sss).astype(
+        sampled = (self.np_random.random_sample(*sss.shape) * sss).astype(
             self.dtype
         )  # Based on Gym's MultiDiscrete sampling
         # if type(sampled) == int:
